@@ -1,24 +1,14 @@
 int funcaoBalancear () {
 
     int n;
-    float litro, teor;
+    float litro1, teor1, litro1, teor2;
     
     printf("Quantos barris você quer balancear?");
     scanf("%d", &n);
 
-    for(int i=0; i <= n; i++) {
-        scanf("%f %f", &litro, &teor);
-
-        switch ()
-        {
-        case:
-            break;
-        default:
-            break;
-        }
-    }
-
-
+    if(!(scanf("%f %f %f %f", &litro1, &teor1, &litro2, &teor2)) || 
+    (litro1 || teor1 || litro2 || teor2) <= 0) return 0;
+        
 }
 
 int main () {
