@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "./balancear.c"
 
-
 int main () {
     int i, n;
 
@@ -13,7 +12,7 @@ int main () {
 
     for (i = 0; i < n; i++) {
         printf("\nDigite os valores de volume e concentração para ambos o barris do %dº par, respectivamente: ", i);
-        switch (balancear()) {
+        switch (funcaoRetorna()) {
             case -1:
                 printf("Valores inválidos\n");
                 return 1;
