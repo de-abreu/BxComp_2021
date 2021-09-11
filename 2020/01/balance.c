@@ -18,25 +18,21 @@ bool readInput(Barrel * line, Barrel * reservoir) {
         if (i % 2 == 0) {
             line[i / 2].no = i / 2 + 1;
             line[i / 2].juice = f;
+            continue;
         }
-        else {
-            if (f > 1)
-                return false;
-            line[i / 2].alcohol = f * line[i / 2].juice;
-            line[i / 2].juice -= line[i / 2].alcohol;
-            reservoir->juice += line[i / 2].juice;
-            reservoir->alcohol += line[i / 2].alcohol;
-        }
+        if (f > 1)
+            return false;
+        reservoir->alcohol += line[i / 2].alcohol = f * line[i / 2].juice;
+        reservoir->juice += line[i / 2].juice -= line[i / 2].alcohol;
     }
     return true;
 }
 
 void sortLine(Barrel * line) {
-    Barrel aux;
+    Barrel aux = line[0];
 
     if (line[0].juice + line[0].alcohol > line[1].juice + line[1].alcohol)
         return;
-    aux = line[0];
     line[0] = line[1];
     line[1] = aux;
 }
