@@ -4,14 +4,14 @@
 int main () {
     int i, n;
 
-    printf("Este programa recebe valores de volume e concentração de álcool para um par de barris, efetuando uma mistura que deixa um ou ambos os barris com concentração de 14 por cento de álcool.\n Digite quantos barris pretende-se balancear: ");
+    printf("Este programa recebe valores de volume e concentração de álcool para um par de barris, efetuando uma mistura que deixa um ou ambos os barris com concentração de 14 por cento de álcool.\n Digite quantos pares de barris pretende-se balancear: ");
     if (!scanf(" %d", &n) || n <= 0) {
         printf("Valor inválido\n");
         return 1;
     }
 
     for (i = 0; i < n; i++) {
-        printf("\nDigite os valores de volume e concentração para ambos o barris do %dº par, respectivamente: ", i);
+        printf("\nDigite os valores de volume e concentração para ambos o barris do %dº par, respectivamente:\n", i + 1);
         switch (balancear()) {
             case EOF:
                 printf("Valores inválidos\n");
@@ -28,7 +28,6 @@ int main () {
             default:
                 printf("Hehe, esse aqui ta no ponto.\n");
         }
-    return 0;
     }
-
+    return 0;
 }

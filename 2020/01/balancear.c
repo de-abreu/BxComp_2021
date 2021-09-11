@@ -8,13 +8,13 @@ typedef struct {
 } Barrel;
 
 int balancear() {
-    int i, result;
+    int i, result = 0;
     float f, capacity;
     Barrel line[2], sortedLine[2], * finalLine, reservoir;
 
     /* Read Input */
     for (i = 0; i < 4; i++) {
-        if (!scanf(" %f", &f) || f <= 0)
+        if (!(scanf(" %f", &f)) || f <= 0)
             return EOF;
         if (i % 2 == 0) {
             line[i / 2].no = i / 2 + 1;
@@ -49,6 +49,7 @@ int balancear() {
             result += finalLine[i].no;
         }
     }
+    printf("%d\n", result);
 
     return result;
 }
