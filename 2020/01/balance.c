@@ -44,13 +44,13 @@ void sortLine(Barrel * line) {
 int loadBarrel (Barrel * reservoir, Barrel b) {
     float capacity = b.juice + b.alcohol;
 
-    if (reservoir->juice - capacity * 0.86 >= -EPSILON
-    && reservoir->alcohol - capacity * 0.14 >= -EPSILON) {
-        reservoir->juice -= capacity * 0.86;
-        reservoir->alcohol -= capacity * 0.14;
-        return b.no;
-    }
+    if (reservoir->juice - capacity * 0.86 < -EPSILON
+    || reservoir->alcohol - capacity * 0.14 < -EPSILON)
     return 0;
+
+    reservoir->juice -= capacity * 0.86;
+    reservoir->alcohol -= capacity * 0.14;
+    return b.no;
 }
 
 int balance() {
