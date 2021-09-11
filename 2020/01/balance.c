@@ -13,7 +13,7 @@ bool readInput(Barrel * line, Barrel * reservoir) {
     float f;
 
     for (i = 0; i < 4; i++) {
-        if (!(scanf(" %f", &f)) || f <= 0)
+        if (!scanf(" %f", &f) || f <= 0)
             return false;
         if (i % 2 == 0) {
             line[i / 2].no = i / 2 + 1;
@@ -42,8 +42,7 @@ int loadBarrel (Barrel * reservoir, Barrel b) {
 
     if (reservoir->juice - capacity * 0.86 < -EPSILON
     || reservoir->alcohol - capacity * 0.14 < -EPSILON)
-    return 0;
-
+        return 0;
     reservoir->juice -= capacity * 0.86;
     reservoir->alcohol -= capacity * 0.14;
     return b.no;
