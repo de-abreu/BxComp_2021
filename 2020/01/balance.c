@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include <stdbool.h>
 #include <stdio.h>
 
@@ -6,7 +5,7 @@
 
 typedef struct {
     int no;
-    float juice, alcohool;
+    float juice, alcohol;
 } Barrel;
 
 bool readInput(Barrel * line, Barrel * reservoir) {
@@ -23,18 +22,19 @@ bool readInput(Barrel * line, Barrel * reservoir) {
         else {
             if (f > 1)
                 return false;
-            line[i / 2].alcohool = f * line[i / 2].juice;
-            line[i / 2].juice -= line[i / 2].alcohool;
+            line[i / 2].alcohol = f * line[i / 2].juice;
+            line[i / 2].juice -= line[i / 2].alcohol;
         }
         reservoir->juice = line[0].juice + line[1].juice;
-        reservoir->alcohool = line[0].alcohool + line[1].alcohool;
+        reservoir->alcohol = line[0].alcohol + line[1].alcohol;
     }
     return true;
 }
 
 void sortLine(Barrel * line) {
     Barrel aux;
-    if (line[0].juice + line[0].alcohool > line[1].juice + line[1].alcohool)
+
+    if (line[0].juice + line[0].alcohol > line[1].juice + line[1].alcohol)
         return;
     aux = line[0];
     line[0] = line[1];
@@ -42,12 +42,12 @@ void sortLine(Barrel * line) {
 }
 
 int loadBarrel (Barrel * reservoir, Barrel b) {
-    float capacity = b.juice + b.alcohool;
+    float capacity = b.juice + b.alcohol;
 
     if (reservoir->juice - capacity * 0.86 >= -EPSILON
-    && reservoir->alcohool - capacity * 0.14 >= -EPSILON) {
+    && reservoir->alcohol - capacity * 0.14 >= -EPSILON) {
         reservoir->juice -= capacity * 0.86;
-        reservoir->alcohool -= capacity * 0.14;
+        reservoir->alcohol -= capacity * 0.14;
         return b.no;
     }
     return 0;
