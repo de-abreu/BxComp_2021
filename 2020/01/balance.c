@@ -24,9 +24,9 @@ bool readInput(Barrel * line, Barrel * reservoir) {
                 return false;
             line[i / 2].alcohol = f * line[i / 2].juice;
             line[i / 2].juice -= line[i / 2].alcohol;
+            reservoir->juice += line[i / 2].juice;
+            reservoir->alcohol += line[i / 2].alcohol;
         }
-        reservoir->juice = line[0].juice + line[1].juice;
-        reservoir->alcohol = line[0].alcohol + line[1].alcohol;
     }
     return true;
 }
@@ -55,7 +55,7 @@ int loadBarrel (Barrel * reservoir, Barrel b) {
 
 int balance() {
     int i, result = 0;
-    Barrel line[2], reservoir;
+    Barrel line[2], reservoir = {0};
 
     if (!readInput(line, &reservoir))
         return EOF;
