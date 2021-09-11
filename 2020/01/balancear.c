@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include <stdlib.h>
 
 int balancear() {
@@ -17,7 +16,6 @@ int balancear() {
 
     }
 }
-=======
 #include <stdlib.h>
 
 int balancear() {
@@ -32,11 +30,10 @@ int balancear() {
 
     reservoir[1] = barrels[1] + barrels[3];
 
-    sortedBarrels = sortBarrels(barrels)
+    sortedBarrels = sortBarrels(barrels);
     isBigger = (barrels[1] == sortedBarrels[1]) ? 1 : 2;
 
     for (i = 0; i < 4; i += 2) {
 
     }
 }
->>>>>>> 4849a2b91d54f6115537c6396003ce1be6db6827

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include <stdio.h>
 #include "./balancear.c"
 
@@ -33,7 +32,6 @@ int main () {
     }
 
 }
-=======
 #include <stdio.h>
 #include "./balancear.c"
 
@@ -68,4 +66,3 @@ int main () {
     }
 
 }
->>>>>>> 4849a2b91d54f6115537c6396003ce1be6db6827
