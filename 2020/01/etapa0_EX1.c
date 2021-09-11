@@ -30,6 +30,7 @@ int main(){
          alc1 = b1.litros * b1.conc;
          alc2 = b2.litros * b2.conc;
 
+<<<<<<< HEAD
         if (b1.litros <= b2.litros){
 
             utilizado = 0.14 * (b1.litros + b2.litros) - alc1;
@@ -41,15 +42,33 @@ int main(){
 
             }
                 
+=======
+        if (b1.conc <= b2.conc){
+
+            utilizado = 0.14 * (b1.litros + b2.litros) - alc1;
+
+>>>>>>> 893de2c1dc9177d60470756ce80c62855b652673
             if (utilizado + 0.0001 > alc2 && utilizado - 0.0001 < alc2){
 
                 printf("Hehe, esse aqui ta no ponto.\n");
                 i++;
                 continue;
 
+<<<<<<< HEAD
 
 
             }
+=======
+            }
+
+
+            if (utilizado > alc2){
+
+                printf("Assim n vai dar. A bebida tem que estar perfeita!\n");
+
+            }
+                
+>>>>>>> 893de2c1dc9177d60470756ce80c62855b652673
 
             if (utilizado < alc2){
 
@@ -59,9 +78,13 @@ int main(){
 
         }
 
+<<<<<<< HEAD
         if (b1.litros > b2.litros){
 
              
+=======
+        if (b1.conc > b2.conc){
+>>>>>>> 893de2c1dc9177d60470756ce80c62855b652673
 
             utilizado = 0.14 * (b1.litros + b2.litros) - alc2;
 

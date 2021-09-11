@@ -1,21 +1,18 @@
 #include<stdio.h>
 
-float mistura_barril (float x1, float y1, float x2, float y2) {
-
-    if(y1 + y2 >= 0.14) {
-
-        if (y1 > y2 && (y1 - y2) > 0) { //Caso o teor do 1º seja maior e saber qual tem mais 
-            printf("Hehe, esse aqui ta no ponto.  Guardem o barril 1 pra depois.\n");
-        } else if (y2 > y1 && (y2 - y1) > 0) {
-            printf("Hehe, esse aqui ta no ponto.  Guardem o barril 2 pra depois.\n");
-        } else if (y1 + y2 == 0.14) {
-            printf("Hehe, esse aqui ta no ponto.\n");
+void mistura_barril (float x1, float y1, float x2, float y2) {
+    float x3, y3;
+    float porc;
+    float z;
+    porc = ((y1*x1) + (y2*x2))/(x1 + x2);
+    //x3 = x1 + x2;
+    y3 = porc;
+    if(y3 < 0.14){
+        if(x1 > x2){
+            z = ((x2*y2) - 0.14*x2)/(0.14 - y1);
+            printf("valor de z: \n", z);
         }
-
-    } else {
-        printf("Assim n vai dar.  A bebida tem que estar perfeita!\n");
     }
-
 }
 
 

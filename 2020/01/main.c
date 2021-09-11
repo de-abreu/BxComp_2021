@@ -12,7 +12,7 @@ int main () {
 
     for (i = 0; i < n; i++) {
         printf("\nDigite os valores de volume e concentração para ambos o barris do %dº par, respectivamente: ", i);
-        switch (funcaoRetorna()) {
+        switch (balancear()) {
             case EOF:
                 printf("Valores inválidos\n");
                 return 1;
