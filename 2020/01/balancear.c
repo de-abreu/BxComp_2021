@@ -7,6 +7,9 @@ typedef struct {
     float juice, alcohool;
 } Barrel;
 
+int balancear() {
+    int i, barrels[4], sortedBarrels[4], reservoir[2], isBigger;
+
 bool readInput(Barrel * line[2], Barrel * reservoir) {
     int i;
     float f;
@@ -33,11 +36,6 @@ bool readInput(Barrel * line[2], Barrel * reservoir) {
 <<<<<<< HEAD
     sortedBarrels = sortBarrels(barrels);
     isBigger = (barrels[1] == sortedBarrels[1]) ? 1 : 2;
-=======
-Barrel * sortLine(Barrel * line) {
-    if (line[0].juice + line[0].alcohool > line[1].juice + line[1].alcohool)
-        return line;
->>>>>>> 893de2c1dc9177d60470756ce80c62855b652673
 
     Barrel * sortedLine[2];
     *sortedLine[0] = *line[1];
@@ -45,13 +43,6 @@ Barrel * sortLine(Barrel * line) {
     return sortedLine;
 }
 
-int loadBarrel (Barrel * reservoir, Barrel barrel) {
-    float capacity = barrel.juice + barrel.alcohool;
-    if (reservoir->juice - capacity * 0.86 >= 0 &&
-        reservoir->alcohool - capacity * 0.14 >= 0) {
-        reservoir->juice -= capacity * 0.86;
-        reservoir->alcohool -= capacity * 0.14;
-        return barrel.no;
     }
     return 0;
 }
