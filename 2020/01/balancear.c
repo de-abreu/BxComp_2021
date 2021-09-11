@@ -12,7 +12,7 @@ int balancear() {
 
     reservoir[1] = barrels[1] + barrels[3];
 
-    sortedBarrels = sortBarrels(barrels)
+    sortedBarrels = sortBarrels(barrels);
     isBigger = (barrels[1] == sortedBarrels[1]) ? 1 : 2;
 
     for (i = 0; i < 4; i += 2) {

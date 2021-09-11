@@ -1,7 +1,7 @@
 int funcaoRetorna () {
 
     int n;
-    float litro1, teor1, litro1, teor2;
+    float litro1, teor1, litro2, teor2;
     
     printf("Quantos barris você quer balancear?");
     scanf("%d", &n);
