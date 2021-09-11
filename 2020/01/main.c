@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "./balancear.c"
+#include "./balance.c"
 
 int main () {
     int i, n;
@@ -12,7 +12,7 @@ int main () {
 
     for (i = 0; i < n; i++) {
         printf("\nDigite os valores de volume e concentração para ambos o barris do %dº par, respectivamente:\n", i + 1);
-        switch (balancear()) {
+        switch (balance()) {
             case EOF:
                 printf("Valores inválidos\n");
                 return 1;
