@@ -1,6 +1,5 @@
 #include <stdbool.h>
 #include <stdio.h>
-
 #define EPSILON 0.000001
 
 typedef struct {
