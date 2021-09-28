@@ -2,15 +2,11 @@
 #include "./balance.c"
 
 int main () {
-    int i, n;
+    int i = 0;
 
     printf("Este programa recebe valores de volume e concentração de álcool para um par de barris, efetuando uma mistura que deixa um ou ambos os barris com concentração de 14 por cento de álcool.\n Digite quantos pares de barris pretende-se balancear: ");
-    if (!scanf(" %d", &n) || n <= 0) {
-        printf("Valor inválido\n");
-        return 1;
-    }
 
-    for (i = 0; i < n; i++) {
+    for (scanf(" %d", &i); i > 0; i--) {
         printf("\nDigite os valores de volume e concentração para ambos o barris do %dº par, respectivamente:\n", i + 1);
         switch (balance()) {
             case EOF:
