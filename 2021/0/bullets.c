@@ -21,16 +21,16 @@ void selectionSort(Node * sequence, int size) {
 }
 
 int main(){
-    int n, i, size, value;
+    int n, i, size;
     Node * array;
 
+    n = size = 0;
     scanf("%d\n%d", &n, &size);
     while (n > 0) {
         array = malloc(size * sizeof(*array));
         for (i = 0; i < size; i++) {
             array[i].pos = i;
-            scanf("%d", &value);
-            array[i].value = value;
+            scanf("%d", &array[i].value);
         }
         selectionSort(array, size);
         for (i = 0; i < size; i++)
