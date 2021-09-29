@@ -1,18 +1,19 @@
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
 int main(){
     int n;
-    char c1, c2, output;
+    char c, output;
 
-    for(scanf("%d\n", &n); n > 0; n--) {
-        while (scanf("%c", &c1) && c1 != '\n') {
-            if (c1 == ' ') {
+    for (scanf("%d\n", &n); n > 0; n--) {
+        while (scanf("%c", &c) != EOF && !iscntrl(c)) {
+            if (c == ' ') {
                 printf(" ");
                 continue;
             }
-            scanf("%c", &c2);
-            output = 'A' + 5 * (c1 - '0') + (c2 - '0');
+            output = 'A' + 5 * (c - '0');
+            scanf("%c", &c);
+            output += (c - '0');
             if (output <= 'Z'){
                 printf("%c", output);
                 continue;
@@ -31,6 +32,7 @@ int main(){
                     printf("!");
             }
         }
+        scanf(" ");
         printf("\n");
     }
     return 0;
