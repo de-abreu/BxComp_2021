@@ -13,7 +13,7 @@ int main(){
             }
             output = 'A' + 5 * (c - '0');
             scanf("%c", &c);
-            output += (c - '0');
+            output += c - '0';
             if (output <= 'Z'){
                 printf("%c", output);
                 continue;

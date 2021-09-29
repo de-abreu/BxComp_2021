@@ -1,11 +1,12 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int main () {
     int n = 0;
     char c;
 
     for (scanf("%d\n", &n); n > 0; n--) {
-        while (scanf("%c", &c) && c != '\n') {
+        while (scanf("%c", &c) != EOF && !iscntrl(c)) {
             switch (c) {
                 case 'D':
                     printf("Rolada tatica ninja.\n");
@@ -24,9 +25,9 @@ int main () {
                     break;
                 case 'A':
                     printf("Nem ferrando. Vou de agentes mesmo.\n");
-                    break;
             }
         }
+        scanf(" ");
     }
     return 0;
 }
