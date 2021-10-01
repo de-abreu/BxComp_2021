@@ -5,19 +5,22 @@ typedef struct {
     int value, pos;
 } Node;
 
-void selectionSort(Node * sequence, int size) {
-    int i, j, pos;
-    Node aux;
+void swap (Node *a, Node *b) {
+    Node temp = *a;
+    *a = *b;
+    *b = temp;
+}
 
-    for (i = 0; i < size - 1; i++) {
-        pos = i;
-        for (j = i + 1; j < size; j++)
-            if (sequence[j].value < sequence[pos].value)
-                pos = j;
-        aux = sequence[i];
-        sequence[i] = sequence[pos];
-        sequence[pos] = aux;
-    }
+void selectionSort (Node * sequence, int size) {
+    int i, pos = 0;
+
+    if (size <= 1)
+        return;
+    for (i = 1; i < size; i++)
+        if (sequence[i].value < sequence[pos].value)
+                pos = i;
+    swap(sequence, &sequence[pos]);
+    selectionSort(sequence + 1, size - 1);
 }
 
 int main(){
