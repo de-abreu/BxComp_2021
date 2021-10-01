@@ -28,19 +28,21 @@ int main(){
     Node * array;
 
     n = size = 0;
-    scanf("%d\n%d", &n, &size);
-    while (n > 0) {
+    for (scanf("%d\n%d", &n, &size); n > 0; n--) {
         array = malloc(size * sizeof(*array));
+
         for (i = 0; i < size; i++) {
             array[i].pos = i;
             scanf("%d", &array[i].value);
         }
+
         selectionSort(array, size);
+
         for (i = 0; i < size; i++)
             printf("%d-%d ", array[i].value, array[i].pos);
         printf("\n");
+
         free(array);
-        n--;
     }
     return 0;
 }
