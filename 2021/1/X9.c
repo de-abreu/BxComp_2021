@@ -34,6 +34,7 @@ int main () {
         }
         printf("\n");
         scanf(" ");
+        free(key);
     }
     return 0;
 }
