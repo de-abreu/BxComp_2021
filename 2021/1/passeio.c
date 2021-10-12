@@ -4,21 +4,31 @@ int main () {
     int n = 0, l1[2], l2[2];
     char p1, p2;
 
-    for (scanf("%d\n", &n); n > 0; n--) {
+    for (scanf("%d", &n); n > 0; n--) {
         scanf(" %d,%d %d,%d", &l1[0], &l1[1], &l2[0], &l2[1]);
-        if (l1[0] == 3 || l1[1] == 3 || l2[0] == 3 || l2[1] == 3){ /* casos vermelhos */
+
+        /* casos vermelhos */
+        if (l1[0] == 3 || l1[1] == 3 || l2[0] == 3 || l2[1] == 3){
             printf("A casa caiu, Cleitinho! Soca PEM neles!\n");
             continue;
         }
 
         p1 = p2 = 'b';
-        if (l1[0] > 1 && l1[0] < 5) /* casos amarelos topo */
+
+        /* casos amarelos topo */
+        if (l1[0] > 1 && l1[0] < 5)
             p1 = 'v';
-        else if (l1[1] > 1 && l1[1] < 5)/* casos amarelos esquerda */
+
+        /* casos amarelos esquerda */
+        else if (l1[1] > 1 && l1[1] < 5)
             p1 = 'h';
-        if (l2[0] > 1 && l2[0] < 5) /* casos amarelos fundo */
+
+        /* casos amarelos fundo */
+        if (l2[0] > 1 && l2[0] < 5)
             p2 = 'v';
-        else if (l2[1] > 1 && l2[1] < 5) /* casos amarelos direita */
+
+        /* casos amarelos direita */
+        else if (l2[1] > 1 && l2[1] < 5)
             p2 = 'h';
 
         if (p1 == 'b' && p2 == 'b')

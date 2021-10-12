@@ -1,26 +1,43 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
+
+char *readKey () {
+    int i, buffer = 76; /* Largura da maior palavra na língua portuguesa */
+    char c, *input = malloc(buffer * sizeof(*input));
+
+    for (i = 0; (c = getchar()) != EOF && isalnum(c); i++) {
+        if (i == buffer - 1) {
+            buffer += buffer;
+            input = realloc(input, buffer * sizeof(*input));
+        }
+        input[i] = c;
+    }
+    input[i] = '\0';
+    return input;
+}
 
 int main () {
     int n = 0, i;
-    char c, *zion = "rx47ziny3p9b01tw2vc8kmdoqjeg5lhfsua6",
-           *alpha = "abcdefghijklmnopqrstuvwxyz0123456789";
+    char c,  *key, *zion = "rx47ziny3p9b01tw2vc8kmdoqjeg5lhfsua6";
 
-    for(scanf("%d\n", &n); n > 0; n--) {
-        do {
-            scanf("%c", &c);
-        } while (c != ' ');
-        while (scanf(" %c", &c) != EOF && !iscntrl(c)) {
-            for (i = 0; i < 36; i++)
-                if (c == zion[i])
-                    break;
-            printf("%c", alpha[i]);
+    for (scanf("%d ", &n); n > 0; n--) {
+        key = readKey();
+        for (i = 0; key[i] != '\0'; i++) {
+            c = getchar();
+            if (c == key[i])
+                continue;
+            if (isalpha(c))
+                printf("%c", zion[c - 'a']);
+            else
+                printf("%c", zion[26 + (c - '0')]);
         }
-        scanf(" ");
         printf("\n");
+        scanf(" ");
     }
     return 0;
 }
+
 /*
 10
 ihdf9874basdbfjh9f23bhjlo ijdf0874aaswb07hxfzxbh1lx
