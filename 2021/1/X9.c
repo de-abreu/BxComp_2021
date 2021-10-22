@@ -4,12 +4,12 @@
 
 char *readKey () {
     int i, buffer = 76; /* Largura da maior palavra na língua portuguesa */
-    char c, *input = malloc(buffer * sizeof(*input));
+    char c, *input = malloc(buffer * sizeof(char));
 
     for (i = 0; (c = getchar()) != EOF && isalnum(c); i++) {
         if (i == buffer - 1) {
             buffer += buffer;
-            input = realloc(input, buffer * sizeof(*input));
+            input = realloc(input, buffer * sizeof(char));
         }
         input[i] = c;
     }
@@ -30,7 +30,7 @@ int main () {
             if (isalpha(c))
                 printf("%c", zion[c - 'a']);
             else
-                printf("%c", zion[26 + (c - '0')]);
+                printf("%c", zion['z' - 'a' + 1 + (c - '0')]);
         }
         printf("\n");
         scanf(" ");
