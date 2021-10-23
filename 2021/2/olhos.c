@@ -34,12 +34,11 @@ bool isRepeated (char **words, int i, int size) {
 int countRepetitions (char **words, int size) {
     int i, repetitions = 0;
 
-    for (i = 0; i < size - 1; i++) {
+    for (i = 0; i < size; i++) {
         if (isRepeated(words, i, size))
             repetitions++;
         free(words[i]);
     }
-    free(words);
     return repetitions;
 }
 

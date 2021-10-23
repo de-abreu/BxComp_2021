@@ -7,10 +7,10 @@ bool isPrime (int num) {
 
     if (num < 2)
         return false;
-    for(i = 3; i < sqrt(num); i++)
+    for(i = 3; i < sqrt(num); i += 2)
         if(num % i == 0)
             return false;
-    return 0;
+    return true;
 }
 
 void countProducts() {
@@ -23,7 +23,7 @@ void countProducts() {
         else
             np++;
     }
-    if((n1 == p && n2 == np) || n1 + n2 == p || n1 + n2 == np)
+    if ((n1 == p && n2 == np) || n1 + n2 == p || n1 + n2 == np)
         printf("ROGeRIO POH DEIXAR ESSX AQUI ENTRAR QUE TA LIMPO\n");
     else if (p == np && np == 0)
         printf("vei sem nada neah? vai gasta moh grana ai dentro\n");
@@ -33,7 +33,7 @@ void countProducts() {
 }
 
 int main(){
-    int n;
+    int n = 0;
 
     for(scanf(" %d", &n); n > 0; n--)
         countProducts();
