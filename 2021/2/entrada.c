@@ -17,6 +17,7 @@ void countProducts() {
     int n1, n2, cod, p, np;
     p = np = 0;
 
+    scanf(" %d %d", &n1, &n2);
     while (scanf(" %d", &cod) && cod != 0) {
         if(isPrime(cod))
             p++;
