@@ -1,6 +1,6 @@
 # Anotações GDB
 
-- Compilar um programa com a flag '-O0' desabilita que o compilador realize otimizações no código, enquanto `-g` faz com que este programa armazene seu código fonte, permitindo-o ser debugado em sua execução.
+- Compilar um programa com a flag `-O0` desabilita que o compilador realize otimizações no código, enquanto `-g` faz com que este programa armazene seu código fonte, permitindo-o ser debugado em sua execução.
 
 - Para se debugar um programa, chama-se este com o comando `gdb` no terminal.
 
@@ -19,6 +19,8 @@
 - `print vector@x` apresenta os primeiros `x` valores de um vetor `vector`.
 
 - `print *vector@x` apresenta os valores apontados por um vetor de ponteiros `vector`.
+
+- `print *matrix@x@y` apresenta os valores apontados por uma matriz `matrix` de tamanho`x,y`.
 
 - `step` avança o programa em uma linha de comando *no escopo global*, entrando em funções, etc.
 
